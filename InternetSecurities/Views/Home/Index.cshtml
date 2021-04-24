@@ -1,0 +1,57 @@
+﻿@model InternetSecurities.ViewModels.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to demo news website</h1>
+    <button class="btn btn-primary" onclick="location.href='@Url.Action("NewStory", "News")'">Add new story</button>
+
+</div>
+
+<main class="container">
+    @foreach (var story in Model.News)
+    {
+        <div class="col-md-12">
+            <div class="story-panel">
+
+                <div class="col-md-10">
+                    <h2>@story.Title</h2>
+
+                    <button onclick="location.href='@Url.Action("Edit", "News", new { id = story.Id})'">Edit</button>
+                    <button data-story-id="@story.Id" class="btn-link js-delete">Delete</button>
+                </div>
+
+                <br />
+                <p>@story.Body</p>
+            </div>
+
+        </div>
+        <br />
+    }
+    @if (Model.News.Count == 0)
+    {
+        <br /><br /><br /><br /><br />
+        <p class="text-center">Looks like there are no stories!</p>
+    }
+
+</main>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $(".js-delete").on("click", function () {
+                if (confirm("Are you sure?")) {
+                    $.ajax({
+                        url: "https://localhost:44361/api/news/" + $(this).attr("data-story-id"),
+                        method: "DELETE",
+                        success: function () {
+                            window.location.href = window.location.href;
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
