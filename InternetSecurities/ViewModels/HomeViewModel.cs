@@ -9,5 +9,6 @@ namespace InternetSecurities.ViewModels
     public class HomeViewModel
     {
         public List<News> News { get; set; }
+        public string SearchWord { get; set; }
     }
 }

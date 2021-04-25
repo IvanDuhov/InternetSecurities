@@ -15,5 +15,7 @@ namespace InternetSecuritiesAPI.Interfaces
         void DeleteStory(News story);
 
         List<News> GetAllNewsToList();
+
+        List<News> SearchForStories(string keyword);
     }
 }

@@ -101,5 +101,35 @@ namespace InternetSecurities.Services
 
             return JsonConvert.DeserializeObject<News>(stringResult);
         }
+
+        public List<News> SearchStories(string keyword)
+        {
+            string stringResult = GetAPICall(apiUrl + "search/" + keyword);
+
+            if (stringResult != null && stringResult != "")
+                return JsonConvert.DeserializeObject<List<News>>(stringResult);
+
+            return new List<News>();
+        }
+
+        public string GetAPICall(string url)
+        {
+            WebRequest requestObject = WebRequest.Create(url);
+            requestObject.Method = "GET";
+
+            HttpWebResponse responseObject = null;
+            responseObject = (HttpWebResponse)requestObject.GetResponse();
+
+            string stringResult = "";
+
+            using (Stream stream = responseObject.GetResponseStream())
+            {
+                StreamReader sr = new StreamReader(stream);
+                stringResult = sr.ReadToEnd();
+                sr.Close();
+            }
+
+            return stringResult;
+        }
     }
 }

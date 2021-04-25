@@ -24,6 +24,8 @@ This is the soluwtion where the API is located. It provides functionality to cre
 - CreateStory(News story) - adds a new story to the database.
 - UpdateStory(int id, News story) - edits an already existing story in the database.
 - DeleteStory(int id) - deletes a story from the database.
+- SearchForStoriesByKeyWord(string keyword) - retrieves all stories from the database that contains the keyword either in their title or in their body.
+
 
 All actions concerning the database are going through a NewService so the API controller itself doesn't handle any database operations.
 

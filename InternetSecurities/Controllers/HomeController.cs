@@ -24,11 +24,19 @@ namespace InternetSecurities.Controllers
             _newsService = newsService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(HomeViewModel model)
         {
-            var news = _newsService.GetAllNews();
+            if (model.SearchWord == "" || model.SearchWord == null)
+            {
+                var news = _newsService.GetAllNews();
+                return View(new HomeViewModel() { News = news != null ? news : new List<News>() });
+            }
+            else
+            {
+                var news = _newsService.SearchStories(model.SearchWord);
 
-            return View(new HomeViewModel() { News = news != null ? news : new List<News>() });
+                return View(new HomeViewModel() { News = news != null ? news : new List<News>() });
+            }
         }
 
         public IActionResult Privacy()

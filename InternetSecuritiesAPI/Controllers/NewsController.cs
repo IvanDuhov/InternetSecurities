@@ -93,5 +93,12 @@ namespace InternetSecuritiesAPI.Controllers
             _newsService.DeleteStory(storyInDb);
         }
 
+        // GET /api/news/search/{keyword}
+        [Microsoft.AspNetCore.Mvc.HttpGet("search/{keyword}")]
+        public List<News> SearchForStoriesByKeyWord(string keyword)
+        {
+            return _newsService.SearchForStories(keyword);
+        }
+
     }
 }

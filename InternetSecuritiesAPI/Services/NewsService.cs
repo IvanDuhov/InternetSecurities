@@ -43,5 +43,18 @@ namespace InternetSecuritiesAPI.Services
             _context.News.Add(story);
             _context.SaveChanges();
         }
+
+        // GET /api/news/
+        public List<News> SearchForStories(string keyword)
+        {
+            var result = _context.News.Where(s => s.Title.Contains(keyword) || s.Body.Contains(keyword)).ToList();
+
+            if (result == null)
+            {
+                return new List<News>();
+            }
+
+            return result;
+        }
     }
 }

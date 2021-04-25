@@ -1,4 +1,5 @@
 ﻿using InternetSecurities.Models;
+using InternetSecurities.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
@@ -49,6 +50,30 @@ namespace InternetSecurities.Controllers
             }
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult SearchStories(string keyword)
+        {
+            if (keyword != null)
+            {
+                HomeViewModel viewModel = new HomeViewModel()
+                {
+                    News = _newsService.SearchStories(keyword)
+                };
+
+                if (viewModel.News != null)
+                {
+                    viewModel.SearchWord = keyword;
+                }
+
+                return RedirectToAction("Index", "Home", viewModel);
+            }
+            else
+            {
+                HomeViewModel model = new HomeViewModel();
+
+                return RedirectToAction("Index", "Home", model);
+            }
         }
     }
 }

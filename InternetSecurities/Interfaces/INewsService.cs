@@ -17,5 +17,6 @@ namespace InternetSecurities
         void DeleteStory(int id);
 
         void EditStory(int id, News story);
+        List<News> SearchStories(string keyword);
     }
 }
