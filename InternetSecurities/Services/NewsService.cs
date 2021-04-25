@@ -64,40 +64,17 @@ namespace InternetSecurities.Services
 
         public List<News> GetAllNews()
         {
-            WebRequest requestObject = WebRequest.Create(apiUrl);
-            requestObject.Method = "GET";
-
-            HttpWebResponse responseObject = null;
-            responseObject = (HttpWebResponse)requestObject.GetResponse();
-
-            string stringResult = "";
-
-            using (Stream stream = responseObject.GetResponseStream())
-            {
-                StreamReader sr = new StreamReader(stream);
-                stringResult = sr.ReadToEnd();
-                sr.Close();
-            }
+            string stringResult = GetAPICall(apiUrl);
 
             return JsonConvert.DeserializeObject<List<News>>(stringResult);
         }
 
         public News GetStory(int id)
         {
-            WebRequest requestObject = WebRequest.Create(apiUrl + id);
-            requestObject.Method = "GET";
+            string stringResult = GetAPICall(apiUrl + "/" + id);
 
-            HttpWebResponse responseObject = null;
-            responseObject = (HttpWebResponse)requestObject.GetResponse();
-
-            string stringResult = "";
-
-            using (Stream stream = responseObject.GetResponseStream())
-            {
-                StreamReader sr = new StreamReader(stream);
-                stringResult = sr.ReadToEnd();
-                sr.Close();
-            }
+            if (stringResult != null && stringResult != "")
+                return JsonConvert.DeserializeObject<News>(stringResult);
 
             return JsonConvert.DeserializeObject<News>(stringResult);
         }
