@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "G4EkWOHapWcY4REunbp6ObOj6u+D4ESN14/mQREe20LNvjfxnrO3NE9j8xt+gxAZo69IopqDvn9VEIobrrdddw==",
+  "dgSpecHash": "u+SZzUFCqCLTDF9wAUslyQtDCvE2tF+k+qayHFbrCqCFQ4GrzioYccF5ZD1DVR38veqXttdI5Mr0voSg7F+l9g==",
   "success": true,
   "projectFilePath": "E:\\GitHub\\InternetSecurities\\InternetSecuritiesAPI\\InternetSecuritiesAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Ivan\\.nuget\\packages\\automapper\\4.1.0\\automapper.4.1.0.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.7\\microsoft.aspnet.cors.5.2.7.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.7\\microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",
@@ -137,6 +138,16 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'AutoMapper 4.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

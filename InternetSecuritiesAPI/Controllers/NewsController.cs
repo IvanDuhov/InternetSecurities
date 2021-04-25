@@ -1,4 +1,5 @@
 ﻿using InternetSecuritiesAPI.Data;
+using InternetSecuritiesAPI.DTOs;
 using InternetSecuritiesAPI.Interfaces;
 using InternetSecuritiesAPI.Models;
 using Microsoft.AspNetCore.Http;
@@ -30,28 +31,36 @@ namespace InternetSecuritiesAPI.Controllers
         /// <returns></returns>
         /// /api/news/1
         [Microsoft.AspNetCore.Mvc.HttpGet]
-        public IEnumerable<News> GetNews()
+        public IEnumerable<NewsDTO> GetNews()
         {
-            return _newsService.GetAllNewsToList();
+            List<NewsDTO> result = new List<NewsDTO>();
+
+            var stories = _newsService.GetAllNewsToList();
+
+            foreach (var story in stories)
+            {
+                result.Add(new NewsDTO(story.Title, story.Body, story.Id));
+            }
+
+            return result;
         }
 
         /// <summary>
         /// Gets a single story. /api/news/1
         /// </summary>
         [Microsoft.AspNetCore.Mvc.HttpGet("{id}/")]
-        public News GetStory(int id)
+        public NewsDTO GetStory(int id)
         {
             var story = _newsService.FindById(id);
 
             if (story == null)
             {
-                var notFoundResponse = new HttpResponseMessage(HttpStatusCode.NotFound);
-                throw new HttpResponseException(notFoundResponse);
-
+                throw new HttpResponseException(HttpStatusCode.NotFound);
             }
-            //  throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            return story;
+            NewsDTO result = new NewsDTO(story.Title, story.Body, story.Id);
+
+            return result;
         }
 
         // POST /api/news
@@ -78,6 +87,9 @@ namespace InternetSecuritiesAPI.Controllers
             if (storyInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
+            // Create story from the DTO object
+            // News story = _newsService.DTOToModel(storyDTO);
+
             _newsService.SaveInDatabase(story);
         }
 
@@ -95,9 +107,18 @@ namespace InternetSecuritiesAPI.Controllers
 
         // GET /api/news/search/{keyword}
         [Microsoft.AspNetCore.Mvc.HttpGet("search/{keyword}")]
-        public List<News> SearchForStoriesByKeyWord(string keyword)
+        public IEnumerable<NewsDTO> SearchForStoriesByKeyWord(string keyword)
         {
-            return _newsService.SearchForStories(keyword);
+            List<NewsDTO> result = new List<NewsDTO>();
+
+            var stories = _newsService.SearchForStories(keyword);
+
+            foreach (var story in stories)
+            {
+                result.Add(new NewsDTO(story.Title, story.Body, story.Id));
+            }
+
+            return result;
         }
 
     }

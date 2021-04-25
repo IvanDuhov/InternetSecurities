@@ -1,4 +1,5 @@
 ﻿using InternetSecuritiesAPI.Data;
+using InternetSecuritiesAPI.DTOs;
 using InternetSecuritiesAPI.Interfaces;
 using InternetSecuritiesAPI.Models;
 using System.Collections.Generic;
@@ -44,7 +45,6 @@ namespace InternetSecuritiesAPI.Services
             _context.SaveChanges();
         }
 
-        // GET /api/news/
         public List<News> SearchForStories(string keyword)
         {
             var result = _context.News.Where(s => s.Title.Contains(keyword) || s.Body.Contains(keyword)).ToList();
@@ -55,6 +55,16 @@ namespace InternetSecuritiesAPI.Services
             }
 
             return result;
+        }
+
+        public News DTOToModel(NewsDTO dto)
+        {
+            News story = new News();
+            story.Id = dto.Id;
+            story.Title = dto.Title;
+            story.Body = dto.Body;
+
+            return story;
         }
     }
 }

@@ -29,6 +29,7 @@
           "Microsoft.EntityFrameworkCore.Design": "3.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.0",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.0",
+          "AutoMapper": "4.1.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -317,6 +318,17 @@
         },
         "compile": {
           "InternetSecuritiesAPI.dll": {}
+        }
+      },
+      "AutoMapper/4.1.0": {
+        "runtime": {
+          "lib/net45/AutoMapper.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/net45/AutoMapper.dll": {}
         }
       },
       "Microsoft.AspNet.Cors/5.2.7": {
@@ -3308,6 +3320,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PDag8anMYU0ZGHsPAsF8SY+Gj3JPPQ4Sm0PH4TCc4ktk56C4lCtt2WHlqR92/szFWo1L+50seVKOBiGyK06LhQ==",
+      "path": "automapper/4.1.0",
+      "hashPath": "automapper.4.1.0.nupkg.sha512"
     },
     "Microsoft.AspNet.Cors/5.2.7": {
       "type": "package",

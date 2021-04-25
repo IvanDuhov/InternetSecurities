@@ -94,3 +94,4 @@ E:\GitHub\InternetSecurities\InternetSecuritiesAPI\obj\Debug\netcoreapp3.1\Inter
 E:\GitHub\InternetSecurities\InternetSecuritiesAPI\obj\Debug\netcoreapp3.1\InternetSecuritiesAPI.dll
 E:\GitHub\InternetSecurities\InternetSecuritiesAPI\obj\Debug\netcoreapp3.1\InternetSecuritiesAPI.pdb
 E:\GitHub\InternetSecurities\InternetSecuritiesAPI\obj\Debug\netcoreapp3.1\InternetSecuritiesAPI.genruntimeconfig.cache
+E:\GitHub\InternetSecurities\InternetSecuritiesAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll

@@ -1,4 +1,5 @@
-﻿using InternetSecuritiesAPI.Models;
+﻿using InternetSecuritiesAPI.DTOs;
+using InternetSecuritiesAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,6 @@ namespace InternetSecuritiesAPI.Interfaces
         List<News> GetAllNewsToList();
 
         List<News> SearchForStories(string keyword);
+        public News DTOToModel(NewsDTO dto);
     }
 }

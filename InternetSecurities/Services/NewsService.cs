@@ -71,7 +71,7 @@ namespace InternetSecurities.Services
 
         public News GetStory(int id)
         {
-            string stringResult = GetAPICall(apiUrl + "/" + id);
+            string stringResult = GetAPICall(apiUrl + id);
 
             if (stringResult != null && stringResult != "")
                 return JsonConvert.DeserializeObject<News>(stringResult);
@@ -93,6 +93,7 @@ namespace InternetSecurities.Services
         {
             WebRequest requestObject = WebRequest.Create(url);
             requestObject.Method = "GET";
+            // requestObject.ContentType = "application/json";
 
             HttpWebResponse responseObject = null;
             responseObject = (HttpWebResponse)requestObject.GetResponse();
