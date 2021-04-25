@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "phsNoYAScjsDeXx2dS7/Tglj6MVkaL0vj3Q84wrmuQ+j/MYgidFQSzWlvbjNQotyKU/Kkvqmbn3PECj5ya5bgQ==",
+  "dgSpecHash": "G4EkWOHapWcY4REunbp6ObOj6u+D4ESN14/mQREe20LNvjfxnrO3NE9j8xt+gxAZo69IopqDvn9VEIobrrdddw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ivan\\source\\repos\\InternetSecuritiesAPI\\InternetSecuritiesAPI.csproj",
+  "projectFilePath": "E:\\GitHub\\InternetSecurities\\InternetSecuritiesAPI\\InternetSecuritiesAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.7\\microsoft.aspnet.cors.5.2.7.nupkg.sha512",
     "C:\\Users\\Ivan\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",

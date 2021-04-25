@@ -16,17 +16,18 @@
         <div class="col-md-12">
             <div class="story-panel">
 
-                <div class="col-md-10">
-                    <h2>@story.Title</h2>
-
-                    <button onclick="location.href='@Url.Action("Edit", "News", new { id = story.Id})'">Edit</button>
-                    <button data-story-id="@story.Id" class="btn-link js-delete">Delete</button>
+                <div class="row">
+                    <div class="col-md-10">
+                        <h2>@story.Title</h2>
+                    </div>
+                    <div class="col-md-2">
+                        <button onclick="location.href='@Url.Action("Edit", "News", new { id = story.Id})'">Edit</button>
+                        <button data-story-id="@story.Id" class="btn-link js-delete">Delete</button>
+                    </div>
+                    <br />
                 </div>
-
-                <br />
                 <p>@story.Body</p>
             </div>
-
         </div>
         <br />
     }

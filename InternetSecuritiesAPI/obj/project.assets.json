@@ -7051,11 +7051,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ivan\\source\\repos\\InternetSecuritiesAPI\\InternetSecuritiesAPI.csproj",
+      "projectUniqueName": "E:\\GitHub\\InternetSecurities\\InternetSecuritiesAPI\\InternetSecuritiesAPI.csproj",
       "projectName": "InternetSecuritiesAPI",
-      "projectPath": "C:\\Users\\Ivan\\source\\repos\\InternetSecuritiesAPI\\InternetSecuritiesAPI.csproj",
+      "projectPath": "E:\\GitHub\\InternetSecurities\\InternetSecuritiesAPI\\InternetSecuritiesAPI.csproj",
       "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ivan\\source\\repos\\InternetSecuritiesAPI\\obj\\",
+      "outputPath": "E:\\GitHub\\InternetSecurities\\InternetSecuritiesAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

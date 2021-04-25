@@ -35,7 +35,11 @@ namespace InternetSecuritiesAPI.Services
 
         public void SaveInDatabase(News story)
         {
-            _context.News.Remove(FindById(story.Id));
+            if (FindById(story.Id) != null)
+            {
+                _context.News.Remove(FindById(story.Id));
+            }
+
             _context.News.Add(story);
             _context.SaveChanges();
         }

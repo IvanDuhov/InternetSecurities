@@ -8300,11 +8300,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ivan\\source\\repos\\InternetSecurities\\InternetSecurities.csproj",
+      "projectUniqueName": "E:\\GitHub\\InternetSecurities\\InternetSecurities\\InternetSecurities.csproj",
       "projectName": "InternetSecurities",
-      "projectPath": "C:\\Users\\Ivan\\source\\repos\\InternetSecurities\\InternetSecurities.csproj",
+      "projectPath": "E:\\GitHub\\InternetSecurities\\InternetSecurities\\InternetSecurities.csproj",
       "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ivan\\source\\repos\\InternetSecurities\\obj\\",
+      "outputPath": "E:\\GitHub\\InternetSecurities\\InternetSecurities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
